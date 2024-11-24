@@ -83,7 +83,7 @@ python:
 mkdocs:
   configuration: mkdocs.yml
   ``` -->
-
+<!-- 
 myapp/
 ├── models/
 │   ├── __init__.py
@@ -314,3 +314,4 @@ ne takto ne ja si vytvaram erp :
     • Nastavenie pripomienok na dodržiavanie denných návykov
 
 take nieco...
+ -->
