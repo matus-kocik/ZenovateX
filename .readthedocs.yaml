@@ -11,5 +11,3 @@ python:
 
 mkdocs:
   configuration: mkdocs.yml
-
-language: sk
