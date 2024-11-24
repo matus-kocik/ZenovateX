@@ -1,3 +1,3 @@
-# Welcome to ZenovateX
+# Vitaj na ZenovateX
 
-This is the main page of the ZenovateX documentation.
+Hlavná stránka ZenoveteX dokumentácie.
