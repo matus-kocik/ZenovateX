@@ -17,17 +17,11 @@ build:
 mkdocs:
   configuration: mkdocs.yml
 
-# Optionally, but recommended,
-# declare the Python requirements required to build your documentation
-# See https://docs.readthedocs.io/en/stable/guides/reproducible-builds.html
-# python:
-#    install:
-#    - requirements: docs/requirements.txt
-
+# Declare the Python version and install Poetry as a dependency
 python:
   version: 3.13
   install:
-    method: pip
-    path: .
-    extra_requirements:
-      - poetry
+    - method: pip
+      path: .
+      extra_requirements:
+        - poetry
