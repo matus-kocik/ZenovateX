@@ -83,17 +83,17 @@ python:
 mkdocs:
   configuration: mkdocs.yml
   ``` -->
+
+## Inštalácia Django cez Poetry
+
+Vytvorenie projektu s nazvon config, co je lepsie... Vytvorenie priecinka pre appky...Vytvaranie appiek...
+
+<!-- poetry add django 
+poetry shell - pre venv alebo prikaz s poetry run...
+poetry run django-admin startproject config .
+-->
+
 <!-- 
-myapp/
-├── models/
-│   ├── __init__.py
-│   ├── user_models.py
-│   └── product_models.py
-├── views/
-│   ├── __init__.py
-│   ├── user_views.py
-│   └── product_views.py
-└── ...
 
 erp/
 ├── erp/                     # Hlavná aplikácia Django (core nastavenia)
@@ -158,26 +158,6 @@ warehouse/
         ├── inventory/
         ├── orders/
         └── suppliers/
-
-my_project/
-│
-├── my_django_app/        # Tvoja hlavná aplikácia Django
-│   ├── __init__.py
-│   ├── models.py
-│   ├── views.py
-│   └── ...
-│
-├── docs/                 # Tu bude tvoja dokumentácia generovaná pomocou Sphinxa
-│   ├── conf.py           # Konfiguračný súbor Sphinxa
-│   ├── index.rst         # Hlavný súbor s obsahom dokumentácie
-│   ├── Makefile          # Pre generovanie dokumentácie (html, pdf a pod.)
-│   └──_static/          # Statické súbory pre dokumentáciu (obrázky, CSS)
-│
-├── manage.py             # Tvoj hlavný súbor pre správu Django
-├── requirements.txt      # Ak používaš pip, závislosti pre projekt
-└── ...
-
-ne takto ne ja si vytvaram erp :
 
 1. Financie
 
