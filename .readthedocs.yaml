@@ -9,6 +9,9 @@ build:
   os: ubuntu-24.04
   tools:
     python: "3.13"
+  commands:
+    - pip install poetry
+    - poetry install
 
 # Build documentation with Mkdocs
 mkdocs:
@@ -22,6 +25,9 @@ mkdocs:
 #    - requirements: docs/requirements.txt
 
 python:
+  version: 3.13
   install:
-    - method: poetry
-      path: .
+    method: pip
+    path: .
+    extra_requirements:
+      - poetry
