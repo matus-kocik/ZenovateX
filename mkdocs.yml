@@ -1,0 +1,13 @@
+site_name: ZenovateX Documentation
+theme:
+  name: 'material'
+  font:
+    text: 'Roboto' 
+
+plugins:
+  - search
+  - awesome-pages
+  - mkdocstrings
+
+markdown_extensions:
+  - codehilite
