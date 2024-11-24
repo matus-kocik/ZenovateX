@@ -1,9 +1,8 @@
 site_name: ZenovateX Documentation
 site_url: https://zenovatex.readthedocs.io
 theme:
-  name: 'material'
-  font:
-    text: 'Roboto' 
+  name: 'readthedocs'
+
 
 plugins:
   - search
@@ -15,3 +14,4 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Notes: 01_notes/notes.md
