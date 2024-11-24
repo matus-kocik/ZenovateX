@@ -1,4 +1,5 @@
 site_name: ZenovateX Documentation
+site_url: https://zenovatex.readthedocs.io
 theme:
   name: 'material'
   font:
