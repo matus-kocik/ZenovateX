@@ -18,6 +18,7 @@ Po inštalácii Pythonu budeme používať Poetry, ktorý slúži na správu zá
 <!--
 ```bash
 curl -sSL https://install.python-poetry.org | python3 
+pipx install poetry
 poetry --version
 ``` -->
 
@@ -86,12 +87,97 @@ mkdocs:
 
 ## Inštalácia Django cez Poetry
 
-Vytvorenie projektu s nazvon config, co je lepsie... Vytvorenie priecinka pre appky...Vytvaranie appiek...
+## Vytvorenie projektu s nazvon config, co je lepsie
 
 <!-- poetry add django 
 poetry shell - pre venv alebo prikaz s poetry run...
 poetry run django-admin startproject config .
 -->
+
+## Vytvorenie priecinka pre appky
+
+V projekte používame modulárnu štruktúru, kde všetky aplikácie umiestňujeme do priečinka apps. Tento priečinok je už vytvorený a obsahuje súbor <!-- __init__ -->.py, aby ho Python rozpoznal ako balík.
+<!-- mkdir apps
+touch apps/__init__.py -->
+
+## Vytvorenie aplikácie finance
+
+Pre správu financií sme vytvorili aplikáciu finance v priečinku apps:
+vytvorenie priecinku finance
+poetry run python manage.py startapp finance apps/finance
+
+## Upravime INSTALLED_APPS v súbore settings.py
+
+INSTALLED_APPS = [
+    # ostatné aplikácie
+    'apps.finance',
+]
+
+## Presunutie existujúcich nastaveni
+
+Presuňte obsah pôvodného settings.py do nového súboru base.py a vymažte pôvodný settings.py.
+
+## Zmena SECRET_KEY, kvoli gitu
+
+## Inštalácia balíka python-decouple
+
+poetry add python-decouple
+
+## Vytvorenie .env suboru
+
+.env súbor bude obsahovať všetky citlivé údaje ako SECRET_KEY, prihlasovacie údaje do databázy, a iné konfigurácie. Tento súbor by nemal byť verzovaný v gite.
+
+V koreňovom adresári tvojho projektu (kde je napríklad manage.py), vytvor .env súbor. Tento súbor obsahuje konfiguráciu, ktorá by nemala byť zahrnutá do Gitu. Pridaj ho do .gitignore, aby bol chránený.
+Obsah: ...
+
+<!-- SECRET_KEY=
+DEBUG=
+DATABASE_URL=
+ALLOWED_HOSTS= -->
+
+## VZDY AKTUALIZOVAT GITIGNORE
+
+## Nacitanie hodnot z env do settings.py
+
+Otvori settings.py a importuj funkciu config z balíčka decouple:
+
+<!-- from decouple import config
+
+# Secret key
+SECRET_KEY = config("SECRET_KEY")
+
+# Debug mode 
+DEBUG = config("DEBUG")
+
+# Allowed hosts 
+ALLOWED_HOSTS = config("ALLOWED_HOSTS")
+
+# Database settings
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config("DB_NAME"),
+        "USER": config("DB_USER"),
+        "PASSWORD": config("DB_PASSWORD"),
+        "HOST": config("DB_HOST"),
+        "PORT": config("DB_PORT"),
+    }
+} -->
+
+## Update exportovacieho pluginu poetry na requirements
+
+Exportovací plugin (poetry-plugin-export) budeš musieť nainštalovať manuálne.
+
+Čo sa deje:
+  Poetry momentálne obsahuje funkciu na exportovanie requirements.txt, ale plánuje túto funkciu presunúť do samostatného pluginu.
+
+  Ak chceš túto funkciu zachovať aj v budúcnosti, odporúčajú nainštalovať plugin už teraz, aby si bol pripravený.
+
+poetry self add poetry-plugin-export
+
+Export:
+
+poetry export -f requirements.txt --output requirements.txt --without-hashes
 
 <!-- 
 
